@@ -15,7 +15,9 @@ class PurchaseRequest extends AbstractRequest
         $data['PAYMENT_AMOUNT'] = $this->getAmount();
         $data['STATUS_URL'] = $this->getNotifyUrl();
         $data['PAYMENT_URL'] = $this->getReturnUrl();
+        $data['PAYMENT_URL_METHOD'] = 'GET';
         $data['NOPAYMENT_URL'] = $this->getCancelUrl();
+        $data['NOPAYMENT_URL_METHOD'] = 'GET';
         $data['INTERFACE_LANGUAGE'] = $this->getLanguage();
         $data['SUGGESTED_MEMO'] = $this->getDescription();
         $data['SUGGESTED_MEMO_NOCHANGE'] = $this->getDescriptionNoChange(); // 0 or 1

@@ -68,7 +68,7 @@ class Gateway extends AbstractGateway
     {
         return array(
             'account' => '',
-            'account_name' => '',
+            'accountName' => '',
             'passphrase' => '',
         );
     }
