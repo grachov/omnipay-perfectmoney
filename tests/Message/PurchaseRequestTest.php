@@ -20,7 +20,7 @@ class PurchaseRequestTest extends TestCase
         $this->request->setAccount('Account');
         $this->request->setAccountName('AccountName');
         $this->request->setBaggageFields('BaggageFields');
-        $this->request->setPassphrase('Passphrase');
+        $this->request->setPassword('Passphrase');
         $this->request->setCurrency('Currency');
         $this->request->setAmount('10.00');
         $this->request->setReturnUrl('ReturnUrl');

@@ -17,7 +17,7 @@ class CompletePurchaseRequestTest extends TestCase
         $this->request = m::mock('Omnipay\Perfectmoney\Message\CompletePurchaseRequest[getEndpoint]', $arguments);
         $this->request->setAccount('Account');
         $this->request->setAccountName('AccountName');
-        $this->request->setPassphrase('Passphrase');
+        $this->request->setPassword('Passphrase');
     }
 
     public function testCreateResponseHash()
@@ -32,7 +32,7 @@ class CompletePurchaseRequestTest extends TestCase
             'TIMESTAMPGMT' => '1488022539',
         ];
 
-        $alternate_password_hash = strtoupper(md5($this->request->getPassphrase()));
+        $alternate_password_hash = strtoupper(md5($this->request->getPassword()));
 
         $expectedFingerpring = "{$parameters['PAYMENT_ID']}:{$parameters['PAYEE_ACCOUNT']}:{$parameters['PAYMENT_AMOUNT']}:{$parameters['PAYMENT_UNITS']}:{$parameters['PAYMENT_BATCH_NUM']}:{$parameters['PAYER_ACCOUNT']}:{$alternate_password_hash}:{$parameters['TIMESTAMPGMT']}";
 
@@ -63,7 +63,7 @@ class CompletePurchaseRequestTest extends TestCase
             'V2_HASH' => '34669B3A76D5F2F8F37A490EF1CE0409',
         ]);
         $request = new CompletePurchaseRequest($this->getHttpClient(), $httpRequest);
-        $request->setPassphrase('Passphrase');
+        $request->setPassword('Passphrase');
         $response = $request->send();
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('1488022447', $response->getTransactionId());

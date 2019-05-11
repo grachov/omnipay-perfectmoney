@@ -27,7 +27,7 @@ class RefundRequestTest extends TestCase
         $this->request->setPayeeAccount('PayeeAccount');
         $this->request->setAmount('10.00');
         $this->request->setDescription('Description');
-        $this->request->setPassword('Password');
+        $this->request->setPassphrase('Password');
         $this->request->setAccount('Account');
         $this->request->setAccountId('AccountId');
         $this->request->setPaymentId('PaymentId');
@@ -68,7 +68,7 @@ class RefundRequestTest extends TestCase
         $this->request->setPayeeAccount('PayeeAccount');
         $this->request->setAmount('10.00');
         $this->request->setDescription('Description');
-        $this->request->setPassword('Password');
+        $this->request->setPassphrase('Password');
         $this->request->setAccount('Account');
         $this->request->setAccountId('AccountId');
         $this->request->setPaymentId('PaymentId');
